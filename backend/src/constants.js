@@ -1,1 +1,1 @@
-export const DB_NAME = 'StayFinder'
+export const DB_NAME = 'UniEvent';

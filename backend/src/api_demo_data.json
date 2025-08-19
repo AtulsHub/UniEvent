@@ -1,0 +1,118 @@
+[
+  {
+    "endpoint": "/api/v1/users/register",
+    "method": "POST",
+    "requestBody": {
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "password": "alicepass123",
+      "role": "student"
+    },
+    "sampleResponse": {
+      "_id": "u1",
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "role": "student",
+      "createdAt": "2025-07-04T10:00:00Z"
+    }
+  },
+  {
+    "endpoint": "/api/v1/users/login",
+    "method": "POST",
+    "requestBody": {
+      "email": "alice@example.com",
+      "password": "alicepass123"
+    },
+    "sampleResponse": {
+      "accessToken": "<jwt-token>",
+      "refreshToken": "<jwt-token>"
+    }
+  },
+  {
+    "endpoint": "/api/v1/users/u1",
+    "method": "GET",
+    "sampleResponse": {
+      "_id": "u1",
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "role": "student"
+    }
+  },
+  {
+    "endpoint": "/api/v1/event",
+    "method": "POST",
+    "requestBody": {
+      "title": "Tech Conference 2025",
+      "description": "A conference about the latest in tech.",
+      "date": "2025-08-15",
+      "location": "Auditorium A"
+    },
+    "sampleResponse": {
+      "_id": "e1",
+      "title": "Tech Conference 2025",
+      "description": "A conference about the latest in tech.",
+      "date": "2025-08-15",
+      "location": "Auditorium A"
+    }
+  },
+  {
+    "endpoint": "/api/v1/event/e1",
+    "method": "GET",
+    "sampleResponse": {
+      "_id": "e1",
+      "title": "Tech Conference 2025",
+      "description": "A conference about the latest in tech.",
+      "date": "2025-08-15",
+      "location": "Auditorium A"
+    }
+  },
+  {
+    "endpoint": "/api/v1/registration",
+    "method": "POST",
+    "requestBody": {
+      "userId": "u1",
+      "eventId": "e1"
+    },
+    "sampleResponse": {
+      "_id": "r1",
+      "userId": "u1",
+      "eventId": "e1",
+      "status": "registered"
+    }
+  },
+  {
+    "endpoint": "/api/v1/registration/r1",
+    "method": "GET",
+    "sampleResponse": {
+      "_id": "r1",
+      "userId": "u1",
+      "eventId": "e1",
+      "status": "registered"
+    }
+  },
+  {
+    "endpoint": "/api/v1/feedback",
+    "method": "POST",
+    "requestBody": {
+      "userId": "u1",
+      "eventId": "e1",
+      "comment": "Amazing event!"
+    },
+    "sampleResponse": {
+      "_id": "f1",
+      "userId": "u1",
+      "eventId": "e1",
+      "comment": "Amazing event!"
+    }
+  },
+  {
+    "endpoint": "/api/v1/feedback/f1",
+    "method": "GET",
+    "sampleResponse": {
+      "_id": "f1",
+      "userId": "u1",
+      "eventId": "e1",
+      "comment": "Amazing event!"
+    }
+  }
+]
